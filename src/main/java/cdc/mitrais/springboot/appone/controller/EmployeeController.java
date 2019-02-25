@@ -29,6 +29,11 @@ public class EmployeeController {
 	private EmployeeServices employeeService;
 	
 	
+	@RequestMapping("/home")
+	public String home() {
+		return "index";
+	}
+	
 	@RequestMapping(value = EmployeeRestURI.GET_EMPLOYEE_LIST, method = RequestMethod.GET)
 	public @ResponseBody ResponseEntity<?> getAllEmployees(@RequestParam(name="page") int page, @RequestParam(name="size") int size){
 		
