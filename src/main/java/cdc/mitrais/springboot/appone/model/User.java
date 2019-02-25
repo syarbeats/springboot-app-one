@@ -24,6 +24,9 @@ public class User implements Serializable{
 	@Column(name="username")
 	private String username;
 	
+	@Column(name="role")
+	private String role;
+	
 	public String getPassword() {
 		return password;
 	}
@@ -53,6 +56,18 @@ public class User implements Serializable{
 	 */
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	/**
+	 * @return the role
+	 */
+	public String getRole() {
+		return role;
+	}
+	/**
+	 * @param role the role to set
+	 */
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 	

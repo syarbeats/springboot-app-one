@@ -24,8 +24,9 @@ public class EmployeeUserDetails implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		
-		return Collections.singleton(new SimpleGrantedAuthority("USER"));
+		String role = user.getRole();
+		System.out.println("Role: "+ role);
+		return Collections.singleton(new SimpleGrantedAuthority(role));
 	}
 
 	@Override
