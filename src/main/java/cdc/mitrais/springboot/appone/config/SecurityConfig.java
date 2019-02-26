@@ -1,5 +1,7 @@
 package cdc.mitrais.springboot.appone.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +17,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
+	private Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
+	
 	@Autowired
 	private UserDetailsService userDetailsService;
 	
@@ -24,6 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public AuthenticationProvider authenticationProvider() {
 		
+		logger.info("DaoAuthentication process.....");
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
 		provider.setUserDetailsService(userDetailsService);
 		provider.setPasswordEncoder(passwordEncoder);
@@ -33,11 +38,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Bean
     public PasswordEncoder passwordEncoder() {
+		logger.info("set BCrypt Password Encoder.....");
         return new BCryptPasswordEncoder();
     }
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
+		logger.info("set EmployeeUserDetailsService.....");
 	    return new EmployeeUserDetailsService();
 	}
 }

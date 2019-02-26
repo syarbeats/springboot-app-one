@@ -19,7 +19,7 @@ public class EmployeeUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private User user;
 	
-	Logger logger = LoggerFactory.getLogger(EmployeeUserDetails.class);
+	private Logger logger = LoggerFactory.getLogger(EmployeeUserDetails.class);
 	
 	public EmployeeUserDetails(User user) {
 		super();
@@ -43,7 +43,7 @@ public class EmployeeUserDetails implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		
+		logger.info("getUsername from EmployeeUserDetails is invoking....");
 		return user.getUsername();
 	}
 
