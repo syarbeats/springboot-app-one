@@ -24,7 +24,7 @@
                 <div class="col-md-6">                	
                 		<button type="button" class="btn btn-dark" onclick="location.href='http://localhost:8080/addEmployee';">Insert Employee</button>	                	               
 	                	<button type="button" class="btn btn-info" onclick="location.href='http://localhost:8080/editEmployee';">Edit Employee</button>	                	               
-	                	<button type="button" class="btn btn-secondary" onclick="location.href='http://localhost:8080/editEmployee';">Logout</button>	                
+	                	<button type="button" class="btn btn-secondary" onclick="location.href='http://localhost:8080/logout';">Logout</button>	                
                 </div>
                 
                 
