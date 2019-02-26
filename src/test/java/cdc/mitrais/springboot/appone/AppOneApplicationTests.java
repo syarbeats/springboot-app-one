@@ -57,6 +57,9 @@ public class AppOneApplicationTests {
 		 this.mockMvc = webAppContextSetup(webApplicationContext).build();
 	 } 
 	 
+	 /*REST API INTEGRATION TESTING
+	  * **/
+	 
 	 @Test
 	 public void findEmployeeById() throws Exception {
 		 mockMvc.perform(get("/api/employee?id=" + ID))
